@@ -1,5 +1,10 @@
+import React from "react";
+import Contentbody from "../Content-part/content";
+import logo from "../images/BangDBBlack.png";
+
 import "antd/dist/antd.css";
-import "./Layoutclass.css";
+// import "./Layoutclass.css";
+import SubMenu from "antd/lib/menu/SubMenu";
 import {
   Dropdown,
   Image,
@@ -8,17 +13,9 @@ import {
   Menu,
   Space,
   Button,
-  Row,
-  Col,
   Card,
   Divider,
 } from "antd";
-import { Content, Footer, Header } from "antd/lib/layout/layout";
-import Sider from "antd/lib/layout/Sider";
-import SubMenu from "antd/lib/menu/SubMenu";
-import logo from "../images/BangDBBlack.png";
-import bargrp from "../images/bargraph.png";
-import pie from "../images/piechart.png";
 
 import {
   MenuUnfoldOutlined,
@@ -33,13 +30,9 @@ import {
   PieChartOutlined,
   SketchOutlined,
   DollarOutlined,
-  LinkedinOutlined,
-  PhoneOutlined,
-  HomeOutlined,
-  GithubOutlined,
 } from "@ant-design/icons";
-import React from "react";
 import Avatar from "antd/lib/avatar/avatar";
+const { Header, Sider, Content } = Layout;
 
 const dropdownMenu = (
   <Menu>
@@ -60,11 +53,11 @@ class SiderDemo extends React.Component {
     return (
       <>
         <Layout>
-          <Layout className="site-layout">
+          <Layout>
             <Header
-              className="site-layout-background"
+              className="site-layout"
               style={{
-                backgroundColor: "#08142c",
+                backgroundColor: "#34445c",
                 padding: 0,
                 position: "fixed",
                 zIndex: 1,
@@ -110,325 +103,210 @@ class SiderDemo extends React.Component {
                 </Dropdown>
               </Space>
             </Header>
-            <Layout
-              className="site-layout"
-              style={{ marginTop: "9ex", padding: 0 }}>
-              <Row>
-                <Col flex="200px">
-                  <Sider
-                    className="site-layout"
+          </Layout>
+          <Layout className="site-layout">
+            <Sider
+              className=" site-layout-background"
+              style={{
+                backgroundColor: "#34445c",
+                paddingTop: "9ex",
+                paddingLeft: 0,
+                color: "white",
+                height: "100vh",
+                position: "sticky",
+                marginLeft: "-10px",
+                overflow: "auto",
+                top: 0,
+                left: 0,
+                width: "100%",
+              }}
+              trigger={null}
+              collapsible
+              collapsed={this.state.collapsed}>
+              <Menu
+                mode="inline"
+                style={{
+                  width: "100%",
+                  color: "white",
+                  fontSize: "2.5ex",
+                  fontFamily: "Acme , sans-serif",
+                  fontWeight: 500,
+                  backgroundColor: "#34445c",
+                  // marginLeft: "-10px",
+
+                  // padddingLeft: "0ex",
+                }}
+                defaultOpenKeys={["sub6"]}
+                inlineCollapsed={this.state.collapsed}>
+                <SubMenu
+                  key="sub1"
+                  title=" Dashboard"
+                  icon={
+                    <AreaChartOutlined
+                      style={{ fontSize: "11ex", margin: 0 }}
+                    />
+                  }>
+                  {/* <div style={{ backgroundColor: "#34445c", color: "white" }}> */}
+                  <Menu.Item key="1">
+                    <p>nav1</p>
+                  </Menu.Item>
+                  <Menu.Item key="2">
+                    <p>nav2</p>
+                  </Menu.Item>
+                  <Menu.Item
+                    key="3"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav3</p>
+                  </Menu.Item>
+                  {/* </div> */}
+                </SubMenu>
+                <SubMenu
+                  key="sub2"
+                  title="Customers"
+                  icon={<UsergroupAddOutlined style={{ fontSize: "11ex" }} />}>
+                  {/* <div style={{ backgroundColor: "#34445c", color: "white" }}> */}
+                  <Menu.Item
+                    key="4"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav1</p>
+                  </Menu.Item>
+                  <Menu.Item
+                    key="5"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav2</p>
+                  </Menu.Item>
+                  <Menu.Item
+                    key="6"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav3</p>
+                  </Menu.Item>
+                  {/* </div> */}
+                </SubMenu>
+                <SubMenu
+                  key="sub3"
+                  title="Products"
+                  icon={<ShoppingCartOutlined style={{ fontSize: "11ex" }} />}>
+                  {/* <div style={{ backgroundColor: "#34445c", color: "white" }}> */}
+                  <Menu.Item
+                    key="7"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav1</p>
+                  </Menu.Item>
+                  <Menu.Item
+                    key="8"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav2</p>
+                  </Menu.Item>
+                  <Menu.Item
+                    key="9"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav3</p>
+                  </Menu.Item>
+                  {/* </div> */}
+                </SubMenu>
+                <SubMenu
+                  key="sub4"
+                  title="Graphs"
+                  icon={<PieChartOutlined style={{ fontSize: "11ex" }} />}>
+                  {/* <div style={{ backgroundColor: "#34445c", color: "white" }}> */}
+                  <Menu.Item
+                    key="10"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav1</p>
+                  </Menu.Item>
+                  <Menu.Item
+                    key="11"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav2</p>
+                  </Menu.Item>
+                  <Menu.Item
+                    key="12"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <p>nav3</p>
+                  </Menu.Item>
+                  {/* </div> */}
+                </SubMenu>
+                <SubMenu
+                  key="sub5"
+                  title="Settings"
+                  icon={<ShoppingCartOutlined style={{ fontSize: "11ex" }} />}>
+                  <div
                     style={{
-                      // backgroundColor: "#fa541c",
-                      paddingTop: "-10px",
+                      backgroundColor: "#34445c",
                       color: "white",
-                      height: "100vh",
-                      position: "fixed",
-                      marginLeft: "-10px",
-                      overflow: "auto",
-                      left: 0,
-                    }}
-                    trigger={null}
-                    collapsible
-                    collapsed={this.state.collapsed}>
-                    <Menu
-                      theme="dark"
-                      mode="inline"
-                      style={{
-                        // color: "white",
-                        fontSize: "2.5ex",
-                        fontFamily: "Acme , sans-serif",
-                        fontWeight: 500,
-                        // backgroundColor: "#fa541c",
-                      }}
-                      defaultOpenKeys={["sub6"]}
-                      inlineCollapsed={this.state.collapsed}>
-                      <SubMenu
-                        key="sub1"
-                        title=" Dashboard"
-                        icon={
-                          <AreaChartOutlined style={{ fontSize: "11ex" }} />
-                        }>
-                        <Menu.Item key="1">
-                          <p>nav1</p>
-                        </Menu.Item>
-                        <Menu.Item key="2">
-                          <p>nav2</p>
-                        </Menu.Item>
-                        <Menu.Item key="3">
-                          <p>nav3</p>
-                        </Menu.Item>
-                      </SubMenu>
-                      <SubMenu
-                        key="sub2"
-                        title="Customers"
-                        icon={
-                          <UsergroupAddOutlined style={{ fontSize: "11ex" }} />
-                        }>
-                        <Menu.Item key="4">
-                          <p>nav1</p>
-                        </Menu.Item>
-                        <Menu.Item key="5">
-                          <p>nav2</p>
-                        </Menu.Item>
-                        <Menu.Item key="6">
-                          <p>nav3</p>
-                        </Menu.Item>
-                      </SubMenu>
-                      <SubMenu
-                        key="sub3"
-                        title="Products"
-                        icon={
-                          <ShoppingCartOutlined style={{ fontSize: "11ex" }} />
-                        }>
-                        <Menu.Item key="7">
-                          <p>nav1</p>
-                        </Menu.Item>
-                        <Menu.Item key="8">
-                          <p>nav2</p>
-                        </Menu.Item>
-                        <Menu.Item key="9">
-                          <p>nav3</p>
-                        </Menu.Item>
-                      </SubMenu>
-                      <SubMenu
-                        key="sub4"
-                        title="Graphs"
-                        icon={
-                          <PieChartOutlined style={{ fontSize: "11ex" }} />
-                        }>
-                        <Menu.Item key="10">
-                          <p>nav1</p>
-                        </Menu.Item>
-                        <Menu.Item key="11">
-                          <p>nav2</p>
-                        </Menu.Item>
-                        <Menu.Item key="12">
-                          <p>nav3</p>
-                        </Menu.Item>
-                      </SubMenu>
-                      <SubMenu
-                        key="sub5"
-                        title="Settings"
-                        icon={
-                          <ShoppingCartOutlined style={{ fontSize: "11ex" }} />
-                        }>
-                        <Menu.Item key="13">
-                          <p>Settings</p>
-                        </Menu.Item>
-                      </SubMenu>
-                      {/* <Divider /> */}
-                      <SubMenu
-                        key="sub6"
-                        title="Buy Premium"
-                        icon={<DollarOutlined style={{ fontSize: "11ex" }} />}>
-                        <div
-                          key="15"
-                          className="logo-custom"
-                          collapsible="false">
-                          <div className="unlock-div">
-                            {/* <br></br> */}
-                            <div style={{ marginTop: "10px" }}></div>
-                            <p style={{ fontSize: "20px" }}>Unlock</p>
-                            <p>-Higher Number of Events</p>
-                            <br></br>
-                            <p>-More Scale</p>
-                            <br></br>
-                            <p>-More Models</p>
-                          </div>
-                          <div style={{ paddingLeft: "7%" }}>
-                            <Button icon={<SketchOutlined />}>
-                              Subscribe Now
-                            </Button>
-                          </div>
-                        </div>
-                      </SubMenu>
-                    </Menu>
-                  </Sider>
-                </Col>
-                <Layout className="site-layout">
-                  <Col flex="auto">
-                    <Content
-                      className="site-layout-background"
-                      style={{
-                        margin: "0px 16px",
-                        padding: 24,
-                        minHeight: "100vh",
-                      }}>
-                      <div className="content-main-body">
-                        <div className="server-data">
-                          <div className="database-server">
-                            <h1>Database Server [192.20.1.5]</h1>
-                            <div className="ram-data">
-                              Ram
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                            {/* <Divider type="vertical" /> */}
-                            <div className="cpu-data">
-                              CPU
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                            <div className="pro-data">
-                              Processor
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                            <div className="net-data">
-                              Network
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                          </div>
-                          <div className="training-server">
-                            <h1>Training Server [192.20.1.6]</h1>
-                            <div className="ram-data">
-                              Ram
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                            <div className="cpu-data">
-                              CPU
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                            <div className="pro-data">
-                              Processor
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                            <div className="net-data">
-                              Network
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                          </div>
-                          <div className="resource-server">
-                            <h1>Resource Server [192.20.1.7]</h1>
-                            <div className="ram-data">
-                              Ram
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                            <div className="cpu-data">
-                              CPU
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                            <div className="pro-data">
-                              Processor
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                            <div className="net-data">
-                              Network
-                              <div className="box">
-                                Data Will be presented in the form of graph
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        {/* <Divider /> */}
-                        <div className="num-data">
-                          <div className="num-box">
-                            <div className="heading">Database</div>
-                            <div className="num-entry">mydb</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Number of Tables</div>
-                            <div className="num-entry">34</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Indexes</div>
-                            <div className="num-entry">43</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Database Size</div>
-                            <div className="num-entry">21.29GB</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Files</div>
-                            <div className="num-entry">312</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Schemas</div>
-                            <div className="num-entry">2</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Number of Schemas</div>
-                            <div className="num-entry">71</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Number of Streams</div>
-                            <div className="num-entry">3</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Notifications</div>
-                            <div className="num-entry">11.254GB</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Stream Size</div>
-                            <div className="num-entry">22.5M</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Number of Graph</div>
-                            <div className="num-entry">3</div>
-                          </div>
-                          <div className="num-box">
-                            <div className="heading">Size of Graph</div>
-                            <div className="num-entry">3.57GB</div>
-                          </div>
-                        </div>
-                        <Divider />
-                        <div className="graph-data">
-                          <Card title="Bar Graph">
-                            <h4>Details about the graph</h4>
-                            <Image
-                              src={bargrp}
-                              flex={4}
-                              width="500px"
-                              className="graphbar"></Image>
-                          </Card>
-                          <Card title="Pie Chart">
-                            <h4>Details about the pie chart</h4>
-                            <Image
-                              src={pie}
-                              flex={1}
-                              width="200px"
-                              className="graphpie"></Image>
-                          </Card>
-                        </div>
-                      </div>
-                    </Content>
-                  </Col>
-                </Layout>
-              </Row>
+                      margin: "0 0",
+                    }}>
+                    <Menu.Item
+                      key="13"
+                      // style={{ backgroundColor: "#34445c", color: "white" }}
+                    >
+                      <p>Settings</p>
+                    </Menu.Item>
+                  </div>
+                </SubMenu>
+                {/* <Divider /> */}
+                <SubMenu
+                  key="sub6"
+                  title="Buy Premium"
+                  icon={<DollarOutlined style={{ fontSize: "11ex" }} />}>
+                  <div
+                    key="15"
+                    className="logo-custom"
+                    collapsible="false"
+                    // style={{ backgroundColor: "#34445c", color: "white" }}
+                  >
+                    <div className="unlock-div">
+                      {/* <br></br> */}
+                      <div
+                        style={{
+                          marginTop: "10px",
+                          minHeight: "max-content",
+                        }}></div>
+                      <p
+                        style={{
+                          fontSize: "20px",
+                          paddingLeft: "20px",
+                          backgroundColor: "#34445c",
+                        }}>
+                        Unlock
+                      </p>
+                      <p style={{ paddingLeft: "15px" }}>
+                        -Higher Number of Events
+                      </p>
+                      <br></br>
+                      <p style={{ paddingLeft: "15px" }}>-More Scale</p>
+                      <br></br>
+                      <p style={{ paddingLeft: "15px" }}>-More Models</p>
+                    </div>
+                    <div style={{ paddingLeft: "7%" }}>
+                      <Button icon={<SketchOutlined />}>Subscribe Now</Button>
+                    </div>
+                  </div>
+                </SubMenu>
+              </Menu>
+            </Sider>
+            <Layout>
+              <Content
+                className="site-layout-background"
+                style={{
+                  paddingTop: "10ex",
+                  width: "100%",
+                  minHeight: "100vh",
+                }}>
+                <Contentbody />
+              </Content>
             </Layout>
           </Layout>
-          {/* <Footer
-            className="site-layout-footer"
-            style={{ backgroundColor: "white", textAlign: "center" }}>
-            <h3>
-              Check us on <LinkedinOutlined /> <GithubOutlined />{" "}
-            </h3>
-            <h3>
-              Contact us on <PhoneOutlined />
-            </h3>
-            <h3>
-              Address <HomeOutlined />
-            </h3>
-          </Footer> */}
         </Layout>
       </>
     );

@@ -1,0 +1,32 @@
+.number-place {
+  /* background-color: red; */
+  /* border: solid; */
+  background-color: #f8f4f4;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(3, auto);
+  margin: 0 auto;
+  margin-top: -20px;
+}
+.num-box {
+  background-color: white;
+  border: offset;
+  /* margin: 2%; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  color: #006d75;
+
+  margin: 3%;
+}
+.heading-number {
+  grid-row: 1/2;
+  text-align: center;
+}
+.num-entry {
+  grid-row: 2/3;
+  text-align: center;
+}

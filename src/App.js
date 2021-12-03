@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 
 import SiderDemo from "../src/MainLayout/Layoutclass";
+// import SiderDemo2 from "../src/MainLayout/DummyLayout";
 
 function App() {
   return (

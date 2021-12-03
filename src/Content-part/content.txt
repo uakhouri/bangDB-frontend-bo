@@ -1,0 +1,172 @@
+<div className="content-main-body">
+                  <div className="server-data">
+                    <div className="database-server">
+                      <h style={{ color: "#030852" }}>
+                        Database Server [192.20.1.5]
+                      </h>
+                      <div className="ram-data">
+                        <p style={{ color: "blue" }}>Ram</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                      {/* <Divider type="vertical" /> */}
+                      <div className="cpu-data">
+                        <p style={{ color: "darkgreen" }}>CPU</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                      <div className="pro-data">
+                        <p style={{ color: "#00474f" }}>Processor</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                      <div className="net-data">
+                        <p style={{ color: "#237804" }}>Network</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                    </div>
+                    <div className="training-server">
+                      <h style={{ color: "#030852" }}>
+                        Training Server [192.20.1.6]
+                      </h>
+                      <div className="ram-data">
+                        <p style={{ color: "blue" }}>Ram</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                      <div className="cpu-data">
+                        <p style={{ color: "darkgreen" }}>CPU</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                      <div className="pro-data">
+                        <p style={{ color: "#00474f" }}>Processor</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                      <div className="net-data">
+                        <p style={{ color: "#237804" }}>Network</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                    </div>
+                    <div className="resource-server">
+                      <h style={{ color: "#030852" }}>
+                        Resource Server [192.20.1.7]
+                      </h>
+                      <div className="ram-data">
+                        <p style={{ color: "blue" }}>Ram</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                      <div className="cpu-data">
+                        <p style={{ color: "darkgreen" }}>CPU</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                      <div className="pro-data">
+                        <p style={{ color: "#00474f" }}>Processor</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                      <div className="net-data">
+                        <p style={{ color: "#237804" }}>Network</p>
+                        <div className="box">
+                          Data Will be presented in the form of graph
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* <Divider /> */}
+                  <div className="num-data">
+                    <div className="num-box">
+                      <div className="heading">Database</div>
+                      <div className="num-entry">mydb</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Number of Tables</div>
+                      <div className="num-entry">34</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Indexes</div>
+                      <div className="num-entry">43</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Database Size</div>
+                      <div className="num-entry">21.29GB</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Files</div>
+                      <div className="num-entry">312</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Schemas</div>
+                      <div className="num-entry">2</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Number of Schemas</div>
+                      <div className="num-entry">71</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Number of Streams</div>
+                      <div className="num-entry">3</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Notifications</div>
+                      <div className="num-entry">11.254GB</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Stream Size</div>
+                      <div className="num-entry">22.5M</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Number of Graph</div>
+                      <div className="num-entry">3</div>
+                    </div>
+                    <div className="num-box">
+                      <div className="heading">Size of Graph</div>
+                      <div className="num-entry">3.57GB</div>
+                    </div>
+                  </div>
+                  <Divider />
+                  <div className="graph-data">
+                    <Card
+                      title="Bar Graph"
+                      style={{
+                        boxShadow:
+                          "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                      }}>
+                      <h4>Details about the graph</h4>
+                      <Image
+                        src={bargrp}
+                        flex={4}
+                        width="500px"
+                        className="graphbar"></Image>
+                    </Card>
+                    <Card
+                      title="Pie Chart"
+                      style={{
+                        boxShadow:
+                          "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                      }}>
+                      <h4>Details about the pie chart</h4>
+                      <Image
+                        src={pie}
+                        flex={1}
+                        width="200px"
+                        className="graphpie"></Image>
+                    </Card>
+                  </div>
+                </div>

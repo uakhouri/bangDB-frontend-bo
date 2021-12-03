@@ -1,0 +1,27 @@
+.graph {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  margin: 3%;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+}
+.card-design {
+  width: 100%;
+  font-size: larger;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+}
+.panel-design {
+  margin: 4%;
+  width: 100%;
+  grid-column: inherit;
+  grid-row: inherit;
+  /* color: #006d75; */
+}
+#header {
+  color: #006d75;
+}

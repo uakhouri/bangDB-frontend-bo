@@ -3,26 +3,26 @@ import "../Content-part/content.css";
 import "../Content-part/server-data.css";
 import "../Content-part/numeric-data.css";
 import "../Content-part/graph-data.css";
-import bargrp from "../images/bargraph.png";
-import pie from "../images/piechart.png";
-import histo from "../images/histogram.png";
-import bargrp2 from "../images/bargraph2.png";
-import { Image, Collapse } from "antd";
-import { MinusOutlined } from "@ant-design/icons";
+// import bargrp from "../images/bargraph.png";
+// import pie from "../images/piechart.png";
+// import histo from "../images/histogram.png";
+// import bargrp2 from "../images/bargraph2.png";
+// import { Collapse } from "antd";
+// import { MinusOutlined } from "@ant-design/icons";
 
-const { Panel } = Collapse;
-function callback(key) {
-  console.log(key);
-}
+// const { Panel } = Collapse;
+// function callback(key) {
+//   console.log(key);
+// }
 export default class Contentbody extends React.Component {
-  state = {
-    expandIconPosition: "right",
-  };
-  onPositionChange = (expandIconPosition) => {
-    this.setState({ expandIconPosition });
-  };
+  // state = {
+  //   expandIconPosition: "right",
+  // };
+  // onPositionChange = (expandIconPosition) => {
+  //   this.setState({ expandIconPosition });
+  // };
   render() {
-    const { expandIconPosition } = this.state;
+    // const { expandIconPosition } = this.state;
     return (
       <div className="main-content-body" style={{ marginLeft: 50 }}>
         <div className="server-data">
@@ -144,38 +144,7 @@ export default class Contentbody extends React.Component {
         </div>
         <div className="graph-data">
           <div className="graph">
-            <div className="heading">
-              <h1 style={{ textAlign: "center", color: "#006d75" }}>
-                Graph Data
-              </h1>
-            </div>
-            <Collapse
-              expandIcon={() => <MinusOutlined />}
-              expandIconPosition={expandIconPosition}
-              className="card-design"
-              onChange={callback}
-              defaultActiveKey={["1", "2", "3", "4"]}>
-              <Panel header="Graph 1" key="1" className="panel-design">
-                <Image
-                  style={{ width: "auto", height: "auto" }}
-                  src={bargrp}></Image>
-              </Panel>
-              <Panel header="Pie Chart" key="2" className="panel-design">
-                <Image
-                  src={pie}
-                  style={{ width: "auto", height: "auto" }}></Image>
-              </Panel>
-              <Panel header="Graph 2" key="3" className="panel-design">
-                <Image
-                  src={bargrp2}
-                  style={{ width: "auto", height: "auto" }}></Image>
-              </Panel>
-              <Panel header="Histogram" key="4" className="panel-design">
-                <Image
-                  src={histo}
-                  style={{ width: "auto", height: "auto" }}></Image>
-              </Panel>
-            </Collapse>
+            <div className="heading"></div>
           </div>
         </div>
       </div>

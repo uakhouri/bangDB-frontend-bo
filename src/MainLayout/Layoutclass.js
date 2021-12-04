@@ -1,21 +1,12 @@
 import React from "react";
 import Contentbody from "../Content-part/content";
 import logo from "../images/BangDBBlack.png";
-
+// import "./index.less";
+import "../App.less";
 import "antd/dist/antd.css";
-// import "./Layoutclass.css";
+import "./Layoutclass.css";
 import SubMenu from "antd/lib/menu/SubMenu";
-import {
-  Dropdown,
-  Image,
-  Input,
-  Layout,
-  Menu,
-  Space,
-  Button,
-  Card,
-  Divider,
-} from "antd";
+import { Dropdown, Image, Input, Layout, Menu, Space, Button } from "antd";
 
 import {
   MenuUnfoldOutlined,
@@ -28,10 +19,12 @@ import {
   NotificationOutlined,
   SmileOutlined,
   PieChartOutlined,
-  SketchOutlined,
-  DollarOutlined,
+  SettingOutlined,
+  LinkedinOutlined,
+  GithubOutlined,
 } from "@ant-design/icons";
 import Avatar from "antd/lib/avatar/avatar";
+import { Footer } from "antd/lib/layout/layout";
 const { Header, Sider, Content } = Layout;
 
 const dropdownMenu = (
@@ -61,16 +54,17 @@ class SiderDemo extends React.Component {
                 padding: 0,
                 position: "fixed",
                 zIndex: 1,
-                width: "100%",
+                // marginLeft: "-10px",
+                width: "100vw",
+                paddingLeft: "-16px",
               }}>
-              <Space
-                style={{ paddingRight: "1ex", float: "left", color: "white" }}>
+              <Space style={{ float: "left", color: "white" }}>
                 {React.createElement(
                   this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-                  { className: "trigger", onClick: this.toggle }
+                  { className: "trigger-custom", onClick: this.toggle }
                 )}
                 <Image
-                  style={{ position: "absolute", top: "-3ex", left: "-1.3ex" }}
+                  style={{ position: "relative", top: "5px" }}
                   src={logo}
                   width={100}></Image>
                 <Input
@@ -79,7 +73,7 @@ class SiderDemo extends React.Component {
                   size="large"
                   prefix={<SearchOutlined />}></Input>
               </Space>
-              <Space style={{ float: "right", paddingRight: "2ex" }}>
+              <Space style={{ float: "right", paddingRight: "4ex" }}>
                 <UserOutlined
                   style={{
                     fontSize: "2.5ex",
@@ -114,7 +108,7 @@ class SiderDemo extends React.Component {
                 color: "white",
                 height: "100vh",
                 position: "sticky",
-                marginLeft: "-10px",
+
                 overflow: "auto",
                 top: 0,
                 left: 0,
@@ -124,15 +118,16 @@ class SiderDemo extends React.Component {
               collapsible
               collapsed={this.state.collapsed}>
               <Menu
+                theme="dark"
                 mode="inline"
                 style={{
+                  border: "none",
                   width: "100%",
-                  color: "white",
+                  color: "inherit",
                   fontSize: "2.5ex",
                   fontFamily: "Acme , sans-serif",
                   fontWeight: 500,
                   backgroundColor: "#34445c",
-                  // marginLeft: "-10px",
 
                   // padddingLeft: "0ex",
                 }}
@@ -143,7 +138,12 @@ class SiderDemo extends React.Component {
                   title=" Dashboard"
                   icon={
                     <AreaChartOutlined
-                      style={{ fontSize: "11ex", margin: 0 }}
+                      style={{
+                        fontSize: "11ex",
+
+                        marginInlineEnd: "13px",
+                        marginInlineStart: "-5px",
+                      }}
                     />
                   }>
                   {/* <div style={{ backgroundColor: "#34445c", color: "white" }}> */}
@@ -164,7 +164,15 @@ class SiderDemo extends React.Component {
                 <SubMenu
                   key="sub2"
                   title="Customers"
-                  icon={<UsergroupAddOutlined style={{ fontSize: "11ex" }} />}>
+                  icon={
+                    <UsergroupAddOutlined
+                      style={{
+                        fontSize: "11ex",
+                        marginInlineEnd: "13px",
+                        marginInlineStart: "-5px",
+                      }}
+                    />
+                  }>
                   {/* <div style={{ backgroundColor: "#34445c", color: "white" }}> */}
                   <Menu.Item
                     key="4"
@@ -189,7 +197,15 @@ class SiderDemo extends React.Component {
                 <SubMenu
                   key="sub3"
                   title="Products"
-                  icon={<ShoppingCartOutlined style={{ fontSize: "11ex" }} />}>
+                  icon={
+                    <ShoppingCartOutlined
+                      style={{
+                        fontSize: "11ex",
+                        marginInlineEnd: "13px",
+                        marginInlineStart: "-5px",
+                      }}
+                    />
+                  }>
                   {/* <div style={{ backgroundColor: "#34445c", color: "white" }}> */}
                   <Menu.Item
                     key="7"
@@ -214,7 +230,15 @@ class SiderDemo extends React.Component {
                 <SubMenu
                   key="sub4"
                   title="Graphs"
-                  icon={<PieChartOutlined style={{ fontSize: "11ex" }} />}>
+                  icon={
+                    <PieChartOutlined
+                      style={{
+                        fontSize: "11ex",
+                        marginInlineEnd: "13px",
+                        marginInlineStart: "-5px",
+                      }}
+                    />
+                  }>
                   {/* <div style={{ backgroundColor: "#34445c", color: "white" }}> */}
                   <Menu.Item
                     key="10"
@@ -239,11 +263,19 @@ class SiderDemo extends React.Component {
                 <SubMenu
                   key="sub5"
                   title="Settings"
-                  icon={<ShoppingCartOutlined style={{ fontSize: "11ex" }} />}>
+                  icon={
+                    <SettingOutlined
+                      style={{
+                        fontSize: "11ex",
+                        marginInlineEnd: "13px",
+                        marginInlineStart: "-5px",
+                      }}
+                    />
+                  }>
                   <div
                     style={{
-                      backgroundColor: "#34445c",
-                      color: "white",
+                      // backgroundColor: "#34445c",
+                      // color: "white",
                       margin: "0 0",
                     }}>
                     <Menu.Item
@@ -254,45 +286,64 @@ class SiderDemo extends React.Component {
                     </Menu.Item>
                   </div>
                 </SubMenu>
-                {/* <Divider /> */}
-                <SubMenu
-                  key="sub6"
-                  title="Buy Premium"
-                  icon={<DollarOutlined style={{ fontSize: "11ex" }} />}>
+                <Space
+                  inlineCollapsed={this.state.collapsed}
+                  style={{
+                    margin: 4,
+                  }}>
                   <div
-                    key="15"
-                    className="logo-custom"
-                    collapsible="false"
-                    // style={{ backgroundColor: "#34445c", color: "white" }}
-                  >
-                    <div className="unlock-div">
-                      {/* <br></br> */}
-                      <div
-                        style={{
-                          marginTop: "10px",
-                          minHeight: "max-content",
-                        }}></div>
-                      <p
-                        style={{
-                          fontSize: "20px",
-                          paddingLeft: "20px",
-                          backgroundColor: "#34445c",
-                        }}>
-                        Unlock
-                      </p>
-                      <p style={{ paddingLeft: "15px" }}>
-                        -Higher Number of Events
-                      </p>
-                      <br></br>
-                      <p style={{ paddingLeft: "15px" }}>-More Scale</p>
-                      <br></br>
-                      <p style={{ paddingLeft: "15px" }}>-More Models</p>
-                    </div>
-                    <div style={{ paddingLeft: "7%" }}>
-                      <Button icon={<SketchOutlined />}>Subscribe Now</Button>
-                    </div>
+                    style={{
+                      margin: "8%",
+                      marginLeft: "2%",
+                      backgroundColor: "rgba(255, 255, 255, 0.19)",
+                      paddingBottom: "11px",
+                      paddingTop: "11px",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      // border: "solid",
+                      height: "100%",
+                      width: "100%",
+                      borderRadius: "8px",
+                      color: "white",
+                    }}>
+                    {/* <p>BangDB</p> */}
+                    <br></br>
+                    <h6
+                      style={{
+                        fontSize: "1rem",
+                        margin: 0,
+                        fontWeight: 500,
+                        lineHeight: 1.75,
+                        color: "inherit",
+                      }}>
+                      BangDB
+                    </h6>
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: "0.875rem",
+                        fontWeight: 400,
+                        lineHeight: 1.57,
+                        color: "#93CA3AF",
+                        display: "block",
+                        marginBlockStart: "0.5em",
+                        marginBlockEnd: "1em",
+                        marginInlineStart: "0px",
+                        marginInlineEnd: "0px",
+                      }}>
+                      License : Freemuim
+                    </p>
+                    <Button
+                      icon={<ShoppingCartOutlined />}
+                      style={{
+                        paddingLeft: "16px",
+                        paddingRight: "16px",
+                      }}>
+                      Subscribe Now
+                    </Button>
                   </div>
-                </SubMenu>
+                </Space>
+                {/* <Divider /> */}
               </Menu>
             </Sider>
             <Layout>
@@ -307,6 +358,62 @@ class SiderDemo extends React.Component {
               </Content>
             </Layout>
           </Layout>
+          <Footer
+            style={{
+              backgroundColor: "#34445c",
+              alignContent: "center",
+            }}>
+            <div
+              style={{
+                marginLeft: "45% ",
+
+                width: "180px",
+                color: "white",
+
+                borderRadius: "8px",
+
+                backgroundColor: "rgba(255, 255, 255, 0.19)",
+                // paddingBottom: "1%",
+                paddingLeft: "1%",
+                display: "grid",
+                // gridTemplateColumns: "repeat(2,auto)",
+                // gridTemplateRows: "repeat(2,auto)",
+              }}>
+              <div>
+                <p
+                  style={{
+                    fontSize: "1rem",
+                    marginLeft: "15%",
+                    marginRight: "2%",
+                    fontWeight: 500,
+                    lineHeight: 1.75,
+                    color: "inherit",
+                  }}>
+                  Buy Premium
+                </p>
+                <Button
+                  icon={<ShoppingCartOutlined />}
+                  style={{ marginBottom: "5%" }}>
+                  Subscribe Now
+                </Button>
+              </div>
+              <div
+                style={{
+                  gridRow: 1 / -1,
+                  gridColumn: 2 / 3,
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                  textAlign: "center",
+                }}>
+                {" "}
+                Connect with us on<br></br>
+                <LinkedinOutlined
+                  style={{ fontSize: "2.5ex", paddingInline: "2%" }}
+                />
+                <GithubOutlined />
+              </div>
+            </div>
+          </Footer>
         </Layout>
       </>
     );

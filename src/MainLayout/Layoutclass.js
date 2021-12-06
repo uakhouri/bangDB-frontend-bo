@@ -22,6 +22,9 @@ import {
   SettingOutlined,
   LinkedinOutlined,
   GithubOutlined,
+  PhoneOutlined,
+  FacebookOutlined,
+  MailOutlined,
 } from "@ant-design/icons";
 import Avatar from "antd/lib/avatar/avatar";
 import { Footer } from "antd/lib/layout/layout";
@@ -286,7 +289,7 @@ class SiderDemo extends React.Component {
                     </Menu.Item>
                   </div>
                 </SubMenu>
-                <Space
+                {/* <Space
                   inlineCollapsed={this.state.collapsed}
                   style={{
                     margin: 4,
@@ -305,9 +308,9 @@ class SiderDemo extends React.Component {
                       width: "100%",
                       borderRadius: "8px",
                       color: "white",
-                    }}>
-                    {/* <p>BangDB</p> */}
-                    <br></br>
+                    }}> */}
+                {/* <p>BangDB</p> */}
+                {/* <br></br>
                     <h6
                       style={{
                         fontSize: "1rem",
@@ -342,7 +345,7 @@ class SiderDemo extends React.Component {
                       Subscribe Now
                     </Button>
                   </div>
-                </Space>
+                </Space> */}
                 {/* <Divider /> */}
               </Menu>
             </Sider>
@@ -359,59 +362,33 @@ class SiderDemo extends React.Component {
             </Layout>
           </Layout>
           <Footer
+            className="site-footer-custom"
             style={{
-              backgroundColor: "#34445c",
+              backgroundColor: "#f8f4f4",
               alignContent: "center",
+              // border: "solid",
+              padding: 0,
             }}>
-            <div
-              style={{
-                marginLeft: "45% ",
-
-                width: "180px",
-                color: "white",
-
-                borderRadius: "8px",
-
-                backgroundColor: "rgba(255, 255, 255, 0.19)",
-                // paddingBottom: "1%",
-                paddingLeft: "1%",
-                display: "grid",
-                // gridTemplateColumns: "repeat(2,auto)",
-                // gridTemplateRows: "repeat(2,auto)",
-              }}>
-              <div>
-                <p
-                  style={{
-                    fontSize: "1rem",
-                    marginLeft: "15%",
-                    marginRight: "2%",
-                    fontWeight: 500,
-                    lineHeight: 1.75,
-                    color: "inherit",
-                  }}>
-                  Buy Premium
-                </p>
-                <Button
-                  icon={<ShoppingCartOutlined />}
-                  style={{ marginBottom: "5%" }}>
-                  Subscribe Now
-                </Button>
-              </div>
-              <div
-                style={{
-                  gridRow: 1 / -1,
-                  gridColumn: 2 / 3,
-                  fontSize: "1rem",
-                  fontWeight: 500,
-                  textAlign: "center",
-                }}>
-                {" "}
-                Connect with us on<br></br>
-                <LinkedinOutlined
-                  style={{ fontSize: "2.5ex", paddingInline: "2%" }}
-                />
-                <GithubOutlined />
-              </div>
+            <div className="buy-prem-class">
+              <h1>Premium Benefits</h1>
+              <Button
+                icon={<ShoppingCartOutlined />}
+                style={{ fontSize: "1rem" }}>
+                Subscribe Now
+              </Button>
+            </div>
+            <div className="contact-details">
+              <h1>Contact us - </h1>
+              <h3>
+                <PhoneOutlined style={{ fontSize: "1.5rem" }} /> - +91 -
+                XXXXXXXXXX
+              </h3>
+            </div>
+            <div className="ext-links">
+              <h3 style={{ fontSize: "2rem" }}>
+                <LinkedinOutlined /> <GithubOutlined /> <FacebookOutlined />{" "}
+                <MailOutlined />
+              </h3>
             </div>
           </Footer>
         </Layout>

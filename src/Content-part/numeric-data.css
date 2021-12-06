@@ -21,6 +21,7 @@
   color: #006d75;
 
   margin: 3%;
+  border-radius: 15px;
 }
 .heading-number {
   grid-row: 1/2;

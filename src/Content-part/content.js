@@ -24,7 +24,7 @@ export default class Contentbody extends React.Component {
   render() {
     // const { expandIconPosition } = this.state;
     return (
-      <div className="main-content-body" style={{ marginLeft: 50 }}>
+      <div className="main-content-body">
         <div className="server-data">
           <div className="database-server">
             <div className="heading">

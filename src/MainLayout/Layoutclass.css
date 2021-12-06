@@ -17,5 +17,29 @@
 .trigger-custom:hover {
   color: #1890ff;
 }
-.trigger-custom:checked {
+
+.site-footer-custom {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(1, 100%);
+}
+.buy-prem-class {
+  /* border: solid; */
+  margin: 0 auto;
+  align-items: center;
+  grid-column: 1/2;
+  width: auto;
+  height: inherit;
+  padding: 5;
+}
+.contact-details {
+  /* border: solid; */
+  grid-column: 2/3;
+  margin: 0 auto;
+}
+.ext-links {
+  grid-column: 3/4;
+  margin: 0 auto;
+  padding-top: 5%;
+  /* border: solid; */
 }

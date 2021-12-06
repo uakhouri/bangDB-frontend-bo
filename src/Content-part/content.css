@@ -1,10 +1,11 @@
 .main-content-body {
   /* margin: 10; */
+  padding: 2%;
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: 1fr;
   background: #f8f4f4;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .server-data {
   grid-row: 1/2;
